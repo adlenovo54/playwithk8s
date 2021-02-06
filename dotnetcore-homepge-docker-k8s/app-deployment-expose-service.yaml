@@ -1,0 +1,13 @@
+# Create a Deployment and then expose Deployment using Service
+kind: Service
+apiVersion: v1
+metadata:
+  name: dotnetcore-homepge-docker-k8s-deployment-service
+spec:
+  type: NodePort
+  selector:
+    app: dotnetcore-homepge-app-deployment
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

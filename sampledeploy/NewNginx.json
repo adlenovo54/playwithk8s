@@ -1,0 +1,39 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "new-nginx-deployment",
+    "labels": {
+      "app": "new-nginx-deployment",
+      "author": "Adnapster"
+    }
+  },
+  "spec": {
+    "replicas": 2,
+    "selector": {
+      "matchLabels": {
+        "app": "Newnginx"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "Newnginx"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "nginx",
+            "image": "nginx",
+            "ports": [
+              {
+                "containerPort": 80
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

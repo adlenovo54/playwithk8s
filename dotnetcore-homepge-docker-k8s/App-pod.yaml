@@ -1,0 +1,12 @@
+# Create a Pod and then expose it using Service
+kind: Pod
+apiVersion: v1
+metadata:
+  name: dotnetcore-homepge-docker-k8s-app
+  labels:
+    app: dotnetcore-homepge-app
+spec:
+  containers:
+    - name: alm-homepge-docker-k8s
+      image: ananddeshmukhalm/dotnetcore-homepge-docker-k8s:linux
+      

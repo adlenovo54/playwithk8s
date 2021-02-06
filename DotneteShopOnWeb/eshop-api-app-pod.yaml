@@ -1,0 +1,10 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: eshop-api-app
+  labels:
+    app: eshop-api-app
+spec:
+  containers:
+    - name: eshop-api-app-k8s
+      image: ananddeshmukhalm/dotnet-eshop-onweb-k8s:webapi

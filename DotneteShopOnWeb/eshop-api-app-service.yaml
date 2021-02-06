@@ -1,0 +1,13 @@
+# Create a Pod and then expose it using Service
+kind: Service
+apiVersion: v1
+metadata:
+  name: eshop-api-app-k8s-service
+spec:
+  type: NodePort
+  selector:
+    app: eshop-api-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

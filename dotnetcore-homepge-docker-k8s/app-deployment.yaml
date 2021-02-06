@@ -1,0 +1,22 @@
+# Create a Deployment and then expose Deployment using Service
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnetcore-homepge-docker-k8s-deployment
+  labels:
+    app: dotnetcore-homepge-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dotnetcore-homepge-app-deployment
+  template:
+    metadata:
+      labels:
+        app: dotnetcore-homepge-app-deployment
+    spec:
+      containers:
+      - name: dotnetcore-homepge-app-deployment
+        image: ananddeshmukhalm/dotnetcore-homepge-docker-k8s:linux
+        ports:
+        - containerPort: 80
